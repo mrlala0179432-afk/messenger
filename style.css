@@ -3,96 +3,91 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    touch-action: none; /* স্ক্রিন স্ক্রোল হওয়া আটকায় যখন মাউস অন থাকে */
 }
 
 body {
-    background-color: #0b0f19;
+    background-color: #090c15;
     color: #ffffff;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    user-select: none;
 }
 
-/* কাস্টম পয়েন্টার ডিজাইন */
+/* মাউস কার্সারের আউটলাইন ও ডট ডিজাইন */
 .cursor {
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
     border: 2px solid #00f3ff;
     border-radius: 50%;
     position: fixed;
-    pointer-events: none; /* যাতে মাউস ক্লিক আটক না করে */
+    pointer-events: none;
     transform: translate(-50%, -50%);
-    box-shadow: 0 0 15px #00f3ff, inset 0 0 10px #00f3ff;
-    transition: transform 0.1s ease, width 0.2s, height 0.2s;
-    z-index: 9999;
+    box-shadow: 0 0 12px #00f3ff;
+    z-index: 99999;
 }
 
 .cursor::after {
     content: '';
-    width: 8px;
-    height: 8px;
+    width: 6px;
+    height: 6px;
     background: #ff007f;
     border-radius: 50%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    box-shadow: 0 0 8px #ff007f;
 }
 
 .hidden {
     display: none;
 }
 
-/* গ্লাসমোরফিজম কার্ড */
+/* ইন্টারফেস কার্ড */
 .main-card {
     background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(15px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 40px;
+    padding: 35px;
     border-radius: 20px;
     text-align: center;
-    box-shadow: 0 0 30px rgba(0, 243, 255, 0.2);
-    max-width: 400px;
-    width: 90%;
+    box-shadow: 0 0 30px rgba(0, 243, 255, 0.15);
+    width: 85%;
+    max-width: 380px;
 }
 
 .title {
-    font-size: 24px;
+    font-size: 22px;
     color: #00f3ff;
-    text-shadow: 0 0 10px #00f3ff;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .subtitle {
-    font-size: 14px;
-    color: #aaa;
-    margin-bottom: 30px;
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 25px;
 }
 
-/* অন/অফ সুইচ স্টাইল */
 .toggle-container {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 15px;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .status-text {
     font-size: 18px;
     font-weight: bold;
     color: #ff0055;
-    min-width: 40px;
 }
 
 .switch {
     position: relative;
-    display: inline-block;
-    width: 65px;
-    height: 35px;
+    width: 60px;
+    height: 32px;
 }
 
 .switch input {
@@ -105,20 +100,20 @@ body {
     position: absolute;
     cursor: pointer;
     top: 0; left: 0; right: 0; bottom: 0;
-    background-color: #222;
+    background-color: #1e2538;
     transition: .4s;
-    border-radius: 35px;
-    border: 1px solid #444;
+    border-radius: 32px;
+    border: 1px solid #334155;
 }
 
 .slider:before {
     position: absolute;
     content: "";
-    height: 27px;
-    width: 27px;
+    height: 24px;
+    width: 24px;
     left: 4px;
     bottom: 3px;
-    background-color: white;
+    background-color: #fff;
     transition: .4s;
     border-radius: 50%;
 }
@@ -129,11 +124,10 @@ input:checked + .slider {
 }
 
 input:checked + .slider:before {
-    transform: translateX(28px);
-    background-color: #0b0f19;
+    transform: translateX(26px);
+    background-color: #090c15;
 }
 
-/* ডেমো বাটন ও লিঙ্ক */
 .demo-section {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 20px;
@@ -141,20 +135,18 @@ input:checked + .slider:before {
 
 .demo-btn, .demo-link {
     display: inline-block;
-    margin-top: 15px;
+    margin-top: 12px;
     padding: 10px 20px;
-    background: transparent;
+    background: rgba(255, 0, 127, 0.1);
     color: #ff007f;
     border: 1px solid #ff007f;
     border-radius: 8px;
     text-decoration: none;
     cursor: pointer;
-    box-shadow: 0 0 10px rgba(255, 0, 127, 0.3);
-    transition: 0.3s;
+    transition: 0.2s;
 }
 
-.demo-btn:hover, .demo-link:hover {
+.demo-btn:active, .demo-link:active {
     background: #ff007f;
     color: #fff;
-    box-shadow: 0 0 20px #ff007f;
 }
