@@ -3,18 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trackpad Virtual Pointer</title>
+    <title>Manual Tap Virtual Mouse</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- ভার্চুয়াল মাউস কার্সার -->
-    <div id="virtual-cursor" class="cursor hidden"></div>
+    <!-- পিসির অরিজিনাল অ্যারো কার্সার -->
+    <div id="virtual-cursor" class="cursor hidden">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 3L10.07 19.97L12.58 12.58L19.97 10.07L3 3Z" fill="#00f3ff" stroke="#ffffff" stroke-width="1.5"/>
+        </svg>
+    </div>
 
     <!-- মেইন ইন্টারফেস -->
     <div class="main-card">
         <h1 class="title">Virtual Mouse Control</h1>
-        <p class="subtitle">স্মার্টফোন ট্র্যাকপ্যাড মোড</p>
+        <p class="subtitle">স্মার্ট ম্যানুয়াল ট্যাপ সিস্টেম</p>
 
         <!-- অন/অফ বাটন -->
         <div class="toggle-container">
@@ -26,10 +30,10 @@
         </div>
 
         <div class="demo-section">
-            <p>পয়েন্টার চালিয়ে ক্লিক টেস্ট করুন:</p>
-            <button class="demo-btn" onclick="alert('সফলভাবে ক্লিক হয়েছে!')">টেস্ট বাটন</button>
+            <p class="help-text">পয়েন্টার বাটনের ওপর বসিয়ে স্ক্রিনে ট্যাপ করুন:</p>
+            <input type="text" class="demo-input" placeholder="এখানে ক্লিক করে টাইপ করুন...">
             <br>
-            <a href="https://www.youtube.com" target="_blank" class="demo-link">ইউটিউব লিংক</a>
+            <button class="demo-btn" onclick="alert('সফলভাবে ক্লিক হয়েছে!')">টেস্ট বাটন</button>
         </div>
     </div>
 
