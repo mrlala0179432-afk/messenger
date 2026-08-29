@@ -3,54 +3,37 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    touch-action: none; /* স্ক্রিন স্ক্রোল হওয়া আটকায় যখন মাউস অন থাকে */
 }
 
 body {
     background-color: #090c15;
     color: #ffffff;
-    min-height: 100vh;
+    min-height: 120vh;
     display: flex;
     justify-content: center;
     align-items: center;
     user-select: none;
 }
 
-/* মাউস কার্সারের আউটলাইন ও ডট ডিজাইন */
+/* অরিজিনাল মাউস পয়েন্টার */
 .cursor {
-    width: 30px;
-    height: 30px;
-    border: 2px solid #00f3ff;
-    border-radius: 50%;
     position: fixed;
     pointer-events: none;
-    transform: translate(-50%, -50%);
-    box-shadow: 0 0 12px #00f3ff;
     z-index: 99999;
-}
-
-.cursor::after {
-    content: '';
-    width: 6px;
-    height: 6px;
-    background: #ff007f;
-    border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    filter: drop-shadow(0 0 6px #00f3ff);
+    transition: transform 0.05s ease-out;
 }
 
 .hidden {
     display: none;
 }
 
-/* ইন্টারফেস কার্ড */
+/* ইন্টারফেস ডিজাইন */
 .main-card {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(15px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 35px;
+    padding: 30px;
     border-radius: 20px;
     text-align: center;
     box-shadow: 0 0 30px rgba(0, 243, 255, 0.15);
@@ -67,7 +50,7 @@ body {
 .subtitle {
     font-size: 13px;
     color: #888;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .toggle-container {
@@ -75,7 +58,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 15px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .status-text {
@@ -128,25 +111,28 @@ input:checked + .slider:before {
     background-color: #090c15;
 }
 
-.demo-section {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 20px;
+.help-text {
+    font-size: 12px;
+    color: #aaa;
+    margin-bottom: 12px;
 }
 
-.demo-btn, .demo-link {
-    display: inline-block;
-    margin-top: 12px;
+.demo-input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #00f3ff;
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    margin-bottom: 12px;
+    outline: none;
+}
+
+.demo-btn {
     padding: 10px 20px;
     background: rgba(255, 0, 127, 0.1);
     color: #ff007f;
     border: 1px solid #ff007f;
     border-radius: 8px;
-    text-decoration: none;
     cursor: pointer;
-    transition: 0.2s;
-}
-
-.demo-btn:active, .demo-link:active {
-    background: #ff007f;
-    color: #fff;
 }
