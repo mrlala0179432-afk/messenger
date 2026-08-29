@@ -3,17 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Neon Mouse Controller Interface</title>
+    <title>Trackpad Virtual Pointer</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- ভার্চুয়াল মাউস কার্সার -->
     <div id="virtual-cursor" class="cursor hidden"></div>
 
+    <!-- মেইন ইন্টারফেস -->
     <div class="main-card">
         <h1 class="title">Virtual Mouse Control</h1>
-        <p class="subtitle">ব্রাউজারে ভার্চুয়াল পয়েন্টার অন/অফ করুন</p>
+        <p class="subtitle">স্মার্টফোন ট্র্যাকপ্যাড মোড</p>
 
+        <!-- অন/অফ বাটন -->
         <div class="toggle-container">
             <span class="status-text" id="status">OFF</span>
             <label class="switch">
@@ -23,9 +26,10 @@
         </div>
 
         <div class="demo-section">
-            <p>পয়েন্টার টেস্টের জন্য নিচের বাটন বা ভিডিও লিংক ক্লিক করুন:</p>
-            <button class="demo-btn" onclick="alert('বাটনটি সঠিকভাবে কাজ করছে!')">টেস্ট বাটন</button>
-            <a href="https://www.youtube.com" target="_blank" class="demo-link">ইউটিউব ভিজিট করুন</a>
+            <p>পয়েন্টার চালিয়ে ক্লিক টেস্ট করুন:</p>
+            <button class="demo-btn" onclick="alert('সফলভাবে ক্লিক হয়েছে!')">টেস্ট বাটন</button>
+            <br>
+            <a href="https://www.youtube.com" target="_blank" class="demo-link">ইউটিউব লিংক</a>
         </div>
     </div>
 
